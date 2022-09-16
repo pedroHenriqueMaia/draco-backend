@@ -4,9 +4,7 @@ import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      process.env.MONGODB_CONNSTRING,
-    ),
+    MongooseModule.forRoot(process.env.MONGODB_CONNSTRING),
     UsersModule,
   ],
   controllers: [],
