@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -7,7 +7,9 @@ import { User, UserDocument } from './entities/user.entity';
 
 @Injectable()
 export class UsersService {
-  constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {}
+  constructor(
+    @InjectModel(User.name) private userModel: Model<UserDocument>
+    ) {}
 
   create(createUserDto: CreateUserDto) {
     const user = new this.userModel(createUserDto);
@@ -18,8 +20,12 @@ export class UsersService {
     return this.userModel.find();
   }
 
-  findOne(id: string) {
-    return this.userModel.findById(id);
+  async findOne(id: string) {
+    try{
+      return await this.userModel.findById(id)
+    }catch(e) {
+      throw new HttpException('Usuario não encontrado.', HttpStatus.NOT_FOUND)
+    }
   }
 
   update(id: string, updateUserDto: UpdateUserDto) {
