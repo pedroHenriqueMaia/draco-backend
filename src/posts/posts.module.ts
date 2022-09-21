@@ -7,10 +7,10 @@ import { UsersModule } from 'src/users/users.module';
 
 @Module({
   imports: [
-    forwardRef(() => UsersModule), 
+    forwardRef(() => UsersModule),
     MongooseModule.forFeature([{ name: Post.name, schema: PostSchema }]),
   ],
   controllers: [PostsController],
-  providers: [PostsService]
+  providers: [PostsService],
 })
 export class PostsModule {}

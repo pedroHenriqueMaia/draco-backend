@@ -7,9 +7,7 @@ import { User, UserDocument } from './entities/user.entity';
 
 @Injectable()
 export class UsersService {
-  constructor(
-    @InjectModel(User.name) private userModel: Model<UserDocument>
-    ) {}
+  constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {}
 
   create(createUserDto: CreateUserDto) {
     const user = new this.userModel(createUserDto);
@@ -21,10 +19,18 @@ export class UsersService {
   }
 
   async findOne(id: string) {
-    try{
-      return await this.userModel.findById(id)
-    }catch(e) {
-      throw new HttpException('Usuario não encontrado.', HttpStatus.NOT_FOUND)
+    try {
+      return await this.userModel.findById(id);
+    } catch (e) {
+      throw new HttpException('Usuario não encontrado.', HttpStatus.NOT_FOUND);
+    }
+  }
+
+  async findByEmail(email: string) {
+    try {
+      return await this.userModel.findOne({ email: email });
+    } catch (e) {
+      throw new HttpException('Usuario não encontrado.', HttpStatus.NOT_FOUND);
     }
   }
 

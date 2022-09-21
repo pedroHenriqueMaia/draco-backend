@@ -7,10 +7,10 @@ export type PostDocument = Post & Document;
 export class Post {
   @Prop({ type: String, required: true })
   title: string;
-  
+
   @Prop({ type: String, required: true })
   date: string;
-  
+
   @Prop({ type: String, required: true })
   userAuthor: string;
 }
