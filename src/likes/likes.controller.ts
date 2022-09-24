@@ -1,8 +1,10 @@
-import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, UseGuards } from '@nestjs/common';
 import { LikesService } from './likes.service';
 import { CreateLikeDto } from './dto/create-like.dto';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('likes')
+@UseGuards(AuthGuard('jwt'))
 export class LikesController {
   constructor(private readonly likesService: LikesService) {}
 
