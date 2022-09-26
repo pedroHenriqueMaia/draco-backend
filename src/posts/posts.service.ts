@@ -36,18 +36,65 @@ export class PostsService {
     return this.postModel.find({ userAuthor: id });
   }
 
-  update(id: string, updatePostDto: UpdatePostDto) {
-    return this.postModel.findByIdAndUpdate(
-      {
-        _id: id,
-      },
-      {
-        $set: updatePostDto,
-      },
-      {
-        new: true,
-      },
+  async comment(id: string, updatePostDto: UpdatePostDto) {
+    const posts = await this.findOne(id);
+    return await Promise.all(
+      updatePostDto.comments.map(async (i) => {
+        if (await this.usersService.findOne(i.user)) {
+          posts.comments.push(i);
+          return this.postModel.findByIdAndUpdate(
+            {
+              _id: id,
+            },
+            {
+              $set: posts,
+            },
+            {
+              new: true,
+            },
+          );
+        }
+      }),
     );
+  }
+  async like(id: string, updatePostDto: UpdatePostDto) {
+    let post = await this.findOne(id);
+    return await Promise.all(
+      updatePostDto.likes.users.map(async (i) => {
+        if (await this.usersService.findOne(i)) {
+          post = this.likeAndUnliked(post, i);
+          return this.postModel.findByIdAndUpdate(
+            {
+              _id: id,
+            },
+            {
+              $set: post,
+            },
+            {
+              new: true,
+            },
+          );
+        }
+      }),
+    );
+  }
+
+  likeAndUnliked(post: any, user: string) {
+    let deslike = false;
+    post.likes.users.map((a) => {
+      if (a == user) {
+        post.likes.users = post.likes.users.filter((a) => a != user);
+        post.likes.totalLikes = post.likes.users.length;
+        deslike = true;
+      }
+    });
+
+    if (!deslike) {
+      post.likes.users.push(user);
+      post.likes.totalLikes = post.likes.users.length;
+    }
+
+    return post;
   }
 
   remove(id: string) {

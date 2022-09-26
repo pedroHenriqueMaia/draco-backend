@@ -38,9 +38,14 @@ export class PostsController {
     return this.postsService.findAllPostsByUser(id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePostDto: UpdatePostDto) {
-    return this.postsService.update(id, updatePostDto);
+  @Patch('likes/:id')
+  likes(@Param('id') id: string, @Body() updatePostDto: UpdatePostDto) {
+    return this.postsService.like(id, updatePostDto);
+  }
+
+  @Patch('comments/:id')
+  comments(@Param('id') id: string, @Body() updatePostDto: UpdatePostDto) {
+    return this.postsService.comment(id, updatePostDto);
   }
 
   @Delete(':id')

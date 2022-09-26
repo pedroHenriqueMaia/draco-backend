@@ -13,6 +13,12 @@ export class Post {
 
   @Prop({ type: String, required: true })
   userAuthor: string;
+
+  @Prop({ type: { totalLikes: Number, users: [String] } })
+  likes: { totalLikes: number; users: string[] };
+
+  @Prop({ type: [{ user: String, message: String }] })
+  comments: { user: string; message: string }[];
 }
 
 export const PostSchema = SchemaFactory.createForClass(Post);
