@@ -3,5 +3,8 @@ export class CreatePostDto {
   date: string;
   userAuthor: string;
   likes: { totalLikes: number; users: string[] };
-  comments: { user: string; message: string }[];
+  comments: {
+    totalComments: number;
+    allComments: { user: string; message: string }[];
+  };
 }

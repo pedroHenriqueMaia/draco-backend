@@ -39,9 +39,10 @@ export class PostsService {
   async comment(id: string, updatePostDto: UpdatePostDto) {
     const posts = await this.findOne(id);
     return await Promise.all(
-      updatePostDto.comments.map(async (i) => {
+      updatePostDto.comments.allComments.map(async (i) => {
         if (await this.usersService.findOne(i.user)) {
-          posts.comments.push(i);
+          posts.comments.allComments.push(i);
+          posts.comments.totalComments = posts.comments.allComments.length;
           return this.postModel.findByIdAndUpdate(
             {
               _id: id,
@@ -81,6 +82,7 @@ export class PostsService {
 
   likeAndUnliked(post: any, user: string) {
     let deslike = false;
+    console.log(post);
     post.likes.users.map((a) => {
       if (a == user) {
         post.likes.users = post.likes.users.filter((a) => a != user);
