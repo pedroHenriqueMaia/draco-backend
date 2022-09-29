@@ -1,0 +1,1214 @@
+{
+	"info": {
+		"_postman_id": "86b61462-43a4-4dd8-9342-3d3403e023ce",
+		"name": "draco-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16125990"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Likes/Comments",
+					"item": [
+						{
+							"name": "Add like and deslikein post",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzMzOWQ1ZjM1NGNmODUzYzAzNmQ0NzMiLCJlbWFpbCI6InBlZHJvaEBnbWFpbC5jb20iLCJpYXQiOjE2NjQzMjcyMzgsImV4cCI6MTY2NDMyOTAzOH0.Wqp5QD3r5qU42GYmn0Wxb2daTEyzyzO-FSBE2x9Mtvs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"likes\": \n        {\"users\": [\"63339d5f354cf853c036d473\"]}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostLocal}}/posts/likes/63339e6f354cf853c036d480",
+									"host": [
+										"{{hostLocal}}"
+									],
+									"path": [
+										"posts",
+										"likes",
+										"63339e6f354cf853c036d480"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Add like and deslikein post",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"likes\": \n        {\"users\": [\"63339d5f354cf853c036d473\"]}\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{hostLocal}}/posts/likes/63339e6f354cf853c036d480",
+											"host": [
+												"{{hostLocal}}"
+											],
+											"path": [
+												"posts",
+												"likes",
+												"63339e6f354cf853c036d480"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "308"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"134-AqLouE0MjZugtNFdiRO33gFeDzY\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 28 Sep 2022 01:10:51 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"_id\": \"63339e6f354cf853c036d480\",\n        \"title\": \"meu primeiro post\",\n        \"date\": \"07/01/2001\",\n        \"userAuthor\": \"63339d5f354cf853c036d473\",\n        \"likes\": {\n            \"totalLikes\": 1,\n            \"users\": [\n                \"63339d5f354cf853c036d473\"\n            ],\n            \"_id\": \"63339e6f354cf853c036d481\"\n        },\n        \"comments\": {\n            \"totalComments\": 0,\n            \"allComments\": [],\n            \"_id\": \"63339e6f354cf853c036d482\"\n        },\n        \"__v\": 0\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Add comment in post",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzMzOWQ1ZjM1NGNmODUzYzAzNmQ0NzMiLCJlbWFpbCI6InBlZHJvaEBnbWFpbC5jb20iLCJpYXQiOjE2NjQzMjcyMzgsImV4cCI6MTY2NDMyOTAzOH0.Wqp5QD3r5qU42GYmn0Wxb2daTEyzyzO-FSBE2x9Mtvs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"comments\":  {\"allComments\": [{\"user\": \"63339d5f354cf853c036d473\" , \"message\": \"nice!\"}]}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostLocal}}/posts/comments/63339e6f354cf853c036d480",
+									"host": [
+										"{{hostLocal}}"
+									],
+									"path": [
+										"posts",
+										"comments",
+										"63339e6f354cf853c036d480"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Add comment in post",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"comments\":  {\"allComments\": [{\"user\": \"63339d5f354cf853c036d473\" , \"message\": \"nice!\"}]}\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{hostLocal}}/posts/comments/63339e6f354cf853c036d480",
+											"host": [
+												"{{hostLocal}}"
+											],
+											"path": [
+												"posts",
+												"comments",
+												"63339e6f354cf853c036d480"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "394"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"18a-od20CkfacLKhy5HFaiqnaktVgKA\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 28 Sep 2022 01:11:50 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"_id\": \"63339e6f354cf853c036d480\",\n        \"title\": \"meu primeiro post\",\n        \"date\": \"07/01/2001\",\n        \"userAuthor\": \"63339d5f354cf853c036d473\",\n        \"likes\": {\n            \"totalLikes\": 1,\n            \"users\": [\n                \"63339d5f354cf853c036d473\"\n            ],\n            \"_id\": \"63339e6f354cf853c036d481\"\n        },\n        \"comments\": {\n            \"totalComments\": 1,\n            \"allComments\": [\n                {\n                    \"user\": \"63339d5f354cf853c036d473\",\n                    \"message\": \"nice!\",\n                    \"_id\": \"63339f56354cf853c036d49f\"\n                }\n            ],\n            \"_id\": \"63339e6f354cf853c036d482\"\n        },\n        \"__v\": 0\n    }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Search Posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzMzOWQ1ZjM1NGNmODUzYzAzNmQ0NzMiLCJlbWFpbCI6InBlZHJvaEBnbWFpbC5jb20iLCJpYXQiOjE2NjQzMjcyMzgsImV4cCI6MTY2NDMyOTAzOH0.Wqp5QD3r5qU42GYmn0Wxb2daTEyzyzO-FSBE2x9Mtvs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostLocal}}/posts",
+							"host": [
+								"{{hostLocal}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search Posts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostLocal}}/posts",
+									"host": [
+										"{{hostLocal}}"
+									],
+									"path": [
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "282"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11a-AJT9aqaG3c/9mdE1buPPUa6sI64\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 01:09:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"63339e6f354cf853c036d480\",\n        \"title\": \"meu primeiro post\",\n        \"date\": \"07/01/2001\",\n        \"userAuthor\": \"63339d5f354cf853c036d473\",\n        \"likes\": {\n            \"totalLikes\": 0,\n            \"users\": [],\n            \"_id\": \"63339e6f354cf853c036d481\"\n        },\n        \"comments\": {\n            \"totalComments\": 0,\n            \"allComments\": [],\n            \"_id\": \"63339e6f354cf853c036d482\"\n        },\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Find Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzMzOWQ1ZjM1NGNmODUzYzAzNmQ0NzMiLCJlbWFpbCI6InBlZHJvaEBnbWFpbC5jb20iLCJpYXQiOjE2NjQzMjcyMzgsImV4cCI6MTY2NDMyOTAzOH0.Wqp5QD3r5qU42GYmn0Wxb2daTEyzyzO-FSBE2x9Mtvs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostLocal}}/posts/63339e6f354cf853c036d480",
+							"host": [
+								"{{hostLocal}}"
+							],
+							"path": [
+								"posts",
+								"63339e6f354cf853c036d480"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find Post",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostLocal}}/posts/63339e6f354cf853c036d480",
+									"host": [
+										"{{hostLocal}}"
+									],
+									"path": [
+										"posts",
+										"63339e6f354cf853c036d480"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "280"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"118-V76Oa7fD852jHbRkTa4jMjt319k\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 01:08:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"63339e6f354cf853c036d480\",\n    \"title\": \"meu primeiro post\",\n    \"date\": \"07/01/2001\",\n    \"userAuthor\": \"63339d5f354cf853c036d473\",\n    \"likes\": {\n        \"totalLikes\": 0,\n        \"users\": [],\n        \"_id\": \"63339e6f354cf853c036d481\"\n    },\n    \"comments\": {\n        \"totalComments\": 0,\n        \"allComments\": [],\n        \"_id\": \"63339e6f354cf853c036d482\"\n    },\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Find all post by user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzMzOWQ1ZjM1NGNmODUzYzAzNmQ0NzMiLCJlbWFpbCI6InBlZHJvaEBnbWFpbC5jb20iLCJpYXQiOjE2NjQzMjcyMzgsImV4cCI6MTY2NDMyOTAzOH0.Wqp5QD3r5qU42GYmn0Wxb2daTEyzyzO-FSBE2x9Mtvs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostLocal}}/posts/user/63339d5f354cf853c036d473",
+							"host": [
+								"{{hostLocal}}"
+							],
+							"path": [
+								"posts",
+								"user",
+								"63339d5f354cf853c036d473"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find all post by user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostLocal}}/posts/user/63339d5f354cf853c036d473",
+									"host": [
+										"{{hostLocal}}"
+									],
+									"path": [
+										"posts",
+										"user",
+										"63339d5f354cf853c036d473"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "282"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11a-AJT9aqaG3c/9mdE1buPPUa6sI64\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 01:10:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"63339e6f354cf853c036d480\",\n        \"title\": \"meu primeiro post\",\n        \"date\": \"07/01/2001\",\n        \"userAuthor\": \"63339d5f354cf853c036d473\",\n        \"likes\": {\n            \"totalLikes\": 0,\n            \"users\": [],\n            \"_id\": \"63339e6f354cf853c036d481\"\n        },\n        \"comments\": {\n            \"totalComments\": 0,\n            \"allComments\": [],\n            \"_id\": \"63339e6f354cf853c036d482\"\n        },\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzMzOWQ1ZjM1NGNmODUzYzAzNmQ0NzMiLCJlbWFpbCI6InBlZHJvaEBnbWFpbC5jb20iLCJpYXQiOjE2NjQzMjcyMzgsImV4cCI6MTY2NDMyOTAzOH0.Wqp5QD3r5qU42GYmn0Wxb2daTEyzyzO-FSBE2x9Mtvs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"meu primeiro post\",\n    \"date\": \"07/01/2001\",\n    \"userAuthor\": \"63339d5f354cf853c036d473\",\n    \"likes\": {\"totalLikes\": 0, \"users\": []},\n    \"comments\": {\"totalComments\": 0, \"allComments\": []}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostLocal}}/posts",
+							"host": [
+								"{{hostLocal}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"meu primeiro post\",\n    \"date\": \"07/01/2001\",\n    \"userAuthor\": \"63339d5f354cf853c036d473\",\n    \"likes\": {\"totalLikes\": 0, \"users\": []},\n    \"comments\": {\"totalComments\": 0, \"allComments\": []}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostLocal}}/posts",
+									"host": [
+										"{{hostLocal}}"
+									],
+									"path": [
+										"posts"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "280"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"118-cyk+AGIHdTtsWamwyjMU4j5cu8U\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 01:07:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"meu primeiro post\",\n    \"date\": \"07/01/2001\",\n    \"userAuthor\": \"63339d5f354cf853c036d473\",\n    \"likes\": {\n        \"totalLikes\": 0,\n        \"users\": [],\n        \"_id\": \"63339e6f354cf853c036d481\"\n    },\n    \"comments\": {\n        \"totalComments\": 0,\n        \"allComments\": [],\n        \"_id\": \"63339e6f354cf853c036d482\"\n    },\n    \"_id\": \"63339e6f354cf853c036d480\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzMzOWQ1ZjM1NGNmODUzYzAzNmQ0NzMiLCJlbWFpbCI6InBlZHJvaEBnbWFpbC5jb20iLCJpYXQiOjE2NjQzMjcyMzgsImV4cCI6MTY2NDMyOTAzOH0.Wqp5QD3r5qU42GYmn0Wxb2daTEyzyzO-FSBE2x9Mtvs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostLocal}}/posts/63339fa1354cf853c036d4a8",
+							"host": [
+								"{{hostLocal}}"
+							],
+							"path": [
+								"posts",
+								"63339fa1354cf853c036d4a8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Post",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostLocal}}/posts/63339fa1354cf853c036d4a8",
+									"host": [
+										"{{hostLocal}}"
+									],
+									"path": [
+										"posts",
+										"63339fa1354cf853c036d4a8"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "280"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"118-c/6+1QtHIbeakbmQOVbT33I3ESo\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 01:14:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"63339fa1354cf853c036d4a8\",\n    \"title\": \"meu primeiro post\",\n    \"date\": \"07/01/2001\",\n    \"userAuthor\": \"63339d5f354cf853c036d473\",\n    \"likes\": {\n        \"totalLikes\": 0,\n        \"users\": [],\n        \"_id\": \"63339fa1354cf853c036d4a9\"\n    },\n    \"comments\": {\n        \"totalComments\": 0,\n        \"allComments\": [],\n        \"_id\": \"63339fa1354cf853c036d4aa\"\n    },\n    \"__v\": 0\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Search Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzJhN2ZmMmE2MjI0ZjkzZjIxODNmNzEiLCJlbWFpbCI6InBlZHJvaEBnbWFpbC5jb20iLCJpYXQiOjE2NjQwNzc5ODYsImV4cCI6MTY2NDA3OTc4Nn0.eTreJ4mbi5sDWCSCCt26FcfgbEIgpIzvx-P7F_A6WYU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzJhN2ZmMmE2MjI0ZjkzZjIxODNmNzEiLCJlbWFpbCI6InBlZHJvaEBnbWFpbC5jb20iLCJpYXQiOjE2NjM3MzE1MTYsImV4cCI6MTY2MzczMTU3Nn0.dzia-vRyR27aUOPEurJsaja60_cNKP7BbMX90YKE4eM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{hostLocal}}/users",
+							"host": [
+								"{{hostLocal}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzJhN2ZmMmE2MjI0ZjkzZjIxODNmNzEiLCJlbWFpbCI6InBlZHJvaEBnbWFpbC5jb20iLCJpYXQiOjE2NjM3MzE1MTYsImV4cCI6MTY2MzczMTU3Nn0.dzia-vRyR27aUOPEurJsaja60_cNKP7BbMX90YKE4eM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{hostLocal}}/users",
+									"host": [
+										"{{hostLocal}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "244"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f4-dhdh35d3Gtsh3n3LSpEc7ax0wy8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 01:05:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"63339d5f354cf853c036d473\",\n        \"name\": \"Pedro Henrique\",\n        \"email\": \"pedroh@gmail.com\",\n        \"password\": \"1234\",\n        \"posts\": [],\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63339ddc354cf853c036d477\",\n        \"name\": \"Pablo Sergio\",\n        \"email\": \"pablo@gmail.com\",\n        \"password\": \"1234\",\n        \"posts\": [],\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Find User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostLocal}}/users/63339d5f354cf853c036d473",
+							"host": [
+								"{{hostLocal}}"
+							],
+							"path": [
+								"users",
+								"63339d5f354cf853c036d473"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostLocal}}/users/63339d5f354cf853c036d473",
+									"host": [
+										"{{hostLocal}}"
+									],
+									"path": [
+										"users",
+										"63339d5f354cf853c036d473"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "122"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7a-40jPtJug507+aRvZr5BzzMw8WdQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 01:04:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"63339d5f354cf853c036d473\",\n    \"name\": \"Pedro Henrique\",\n    \"email\": \"pedroh@gmail.com\",\n    \"password\": \"1234\",\n    \"posts\": [],\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"pablo@gmail.com\",\n    \"name\": \"Pablo Sergio\",\n    \"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostLocal}}/users",
+							"host": [
+								"{{hostLocal}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"pedroh@gmail.com\",\n    \"name\": \"Pedro Henrique\",\n    \"password\": \"1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostLocal}}/users",
+									"host": [
+										"{{hostLocal}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "122"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7a-IuvyRt4cVB6Vc6IA6BoQ5ficraY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 01:03:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Pedro Henrique\",\n    \"email\": \"pedroh@gmail.com\",\n    \"password\": \"1234\",\n    \"_id\": \"63339d5f354cf853c036d473\",\n    \"posts\": [],\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"name\": \"Pablo Sergio Maia\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostLocal}}/users/63339ddc354cf853c036d477",
+							"host": [
+								"{{hostLocal}}"
+							],
+							"path": [
+								"users",
+								"63339ddc354cf853c036d477"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update User",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n      \"name\": \"Pablo Sergio Maia\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostLocal}}/users/63339ddc354cf853c036d477",
+									"host": [
+										"{{hostLocal}}"
+									],
+									"path": [
+										"users",
+										"63339ddc354cf853c036d477"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "124"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7c-jdBIMq7+sYG7BifON9ob/PzOQEc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 01:06:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"63339ddc354cf853c036d477\",\n    \"name\": \"Pablo Sergio Maia\",\n    \"email\": \"pablo@gmail.com\",\n    \"password\": \"1234\",\n    \"posts\": [],\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostLocal}}/users/63339ddc354cf853c036d477",
+							"host": [
+								"{{hostLocal}}"
+							],
+							"path": [
+								"users",
+								"63339ddc354cf853c036d477"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete User",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostLocal}}/users/63339ddc354cf853c036d477",
+									"host": [
+										"{{hostLocal}}"
+									],
+									"path": [
+										"users",
+										"63339ddc354cf853c036d477"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "124"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7c-jdBIMq7+sYG7BifON9ob/PzOQEc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 01:06:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"63339ddc354cf853c036d477\",\n    \"name\": \"Pablo Sergio Maia\",\n    \"email\": \"pablo@gmail.com\",\n    \"password\": \"1234\",\n    \"posts\": [],\n    \"__v\": 0\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"pedroh@gmail.com\",\n    \"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostLocal}}/auth/login",
+							"host": [
+								"{{hostLocal}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"pedroh@gmail.com\",\n    \"password\": \"1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostLocal}}/auth/login",
+									"host": [
+										"{{hostLocal}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "220"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"dc-gOSpoa6TuaDJUTHOun5iyCD0Etk\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Sep 2022 01:07:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzMzOWQ1ZjM1NGNmODUzYzAzNmQ0NzMiLCJlbWFpbCI6InBlZHJvaEBnbWFpbC5jb20iLCJpYXQiOjE2NjQzMjcyMzgsImV4cCI6MTY2NDMyOTAzOH0.Wqp5QD3r5qU42GYmn0Wxb2daTEyzyzO-FSBE2x9Mtvs\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
